@@ -1,11 +1,10 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get remove -y binutils
 RUN apt-get install -y python3.10
 RUN apt-get install -y python3-pip
-RUN apt-get install -y python-dev
 RUN apt-get install -y uwsgi-plugin-python3
 RUN apt-get install -y nginx
 RUN apt-get install -y supervisor

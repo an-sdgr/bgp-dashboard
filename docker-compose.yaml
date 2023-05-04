@@ -11,19 +11,19 @@ services:
       - .:/var/tmp
     restart: always
 
-  # mongodb:
-  #   image: mongo:latest
-  #   expose:
-  #     - 27017
-  #   volumes:
-  #     - ./db:/data/db
+  mongodb:
+    image: mongo:latest
+    expose:
+      - 27017
+    volumes:
+      - ./db:/data/db
 
   flask:
     build: ./flask
     ports:
       - 80:80
     volumes:
-      - ./flask/app:/app
+      - ./flask/app:/var/www/app
       # - ./flask/app/log:/var/log/uwsgi/app
 
   #fastapi:
@@ -34,11 +34,11 @@ services:
   #    - ./fastapi:/code
   #    # - ./flask/app/log:/var/log/uwsgi/app
 
-  postgres:
-    image: postgres:14.4
-    env_file:
-     - "dev.env"
-    expose:
-      - 5432
-    volumes:
-      - ./db:/data/db
+  #postgres:
+  #  image: postgres:14.4
+  #  env_file:
+  #   - "dev.env"
+  #  expose:
+  #    - 5432
+  #  volumes:
+  #    - ./db:/data/db
