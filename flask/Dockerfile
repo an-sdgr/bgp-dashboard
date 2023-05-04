@@ -11,7 +11,7 @@ FROM tiangolo/uwsgi-nginx-flask:python3.10
 RUN echo 'Etc/UTC' >/etc/timezone
 RUN apt-get install -y --reinstall tzdata
 # COPY nginx/flask.conf /etc/nginx/sites-available/
-# COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY app/requirements.txt /tmp/requirements.txt
 
 # RUN mkdir -p /var/log/nginx/app /var/log/uwsgi/app /var/log/supervisor /var/www/app

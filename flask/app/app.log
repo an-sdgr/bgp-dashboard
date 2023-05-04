@@ -1,0 +1,296 @@
+
+;uWSGI instance configuration
+[uwsgi]
+ini = /app/uwsgi.ini
+base = /app
+module = bgp
+callable = app
+socket = /app/uwsgi.sock
+chmod-socket = 666
+logto = /app/app.log
+enable-threads = true
+chdir = /app
+processes = 16
+cheaper = 2
+ini = /etc/uwsgi/uwsgi.ini
+socket = /tmp/uwsgi.sock
+chown-socket = nginx:nginx
+chmod-socket = 664
+hook-master-start = unix_signal:15 gracefully_kill_them_all
+need-app = true
+die-on-term = true
+show-config = true
+;end of configuration
+
+*** Starting uWSGI 2.0.21 (64bit) on [Thu May  4 01:32:01 2023] ***
+compiled with version: 10.2.1 20210110 on 24 April 2023 00:20:35
+os: Linux-6.1.27-orbstack-00157-ge13e9ffcc54a #1 SMP Mon May  1 23:01:36 UTC 2023
+nodename: a751160bb954
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 10
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /app
+your processes number limit is 31744
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+chmod(): Invalid argument [core/socket.c line 245]
+uwsgi socket 0 bound to UNIX address /app/uwsgi.sock fd 4
+uwsgi socket 1 bound to UNIX address /tmp/uwsgi.sock fd 5
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.11 (main, Apr 12 2023, 14:46:22) [GCC 10.2.1 20210110]
+Python main interpreter initialized at 0x5555556e2320
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 1239640 bytes (1210 KB) for 16 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5555556e2320 pid: 10 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10)
+spawned uWSGI worker 1 (pid: 17, cores: 1)
+spawned uWSGI worker 2 (pid: 18, cores: 1)
+running "unix_signal:15 gracefully_kill_them_all" (master-start)...
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:32:11 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:32:16 UTC)" skipped: maximum number of running instances reached (1)
+Thu May  4 01:32:18 2023 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 17)...
+Gracefully killing worker 2 (pid: 18)...
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:32:21 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:32:26 UTC)" skipped: maximum number of running instances reached (1)
+
+;uWSGI instance configuration
+[uwsgi]
+ini = /app/uwsgi.ini
+base = /app
+module = bgp
+callable = app
+socket = /app/uwsgi.sock
+chmod-socket = 666
+logto = /app/app.log
+enable-threads = true
+chdir = /app
+processes = 16
+cheaper = 2
+ini = /etc/uwsgi/uwsgi.ini
+socket = /tmp/uwsgi.sock
+chown-socket = nginx:nginx
+chmod-socket = 664
+hook-master-start = unix_signal:15 gracefully_kill_them_all
+need-app = true
+die-on-term = true
+show-config = true
+;end of configuration
+
+*** Starting uWSGI 2.0.21 (64bit) on [Thu May  4 01:33:01 2023] ***
+compiled with version: 10.2.1 20210110 on 24 April 2023 00:20:35
+os: Linux-6.1.27-orbstack-00157-ge13e9ffcc54a #1 SMP Mon May  1 23:01:36 UTC 2023
+nodename: a751160bb954
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 10
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /app
+your processes number limit is 31744
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+chmod(): Invalid argument [core/socket.c line 245]
+uwsgi socket 0 bound to UNIX address /app/uwsgi.sock fd 4
+uwsgi socket 1 bound to UNIX address /tmp/uwsgi.sock fd 5
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.11 (main, Apr 12 2023, 14:46:22) [GCC 10.2.1 20210110]
+Python main interpreter initialized at 0x5555556e2320
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 1239640 bytes (1210 KB) for 16 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5555556e2320 pid: 10 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10)
+spawned uWSGI worker 1 (pid: 17, cores: 1)
+spawned uWSGI worker 2 (pid: 18, cores: 1)
+running "unix_signal:15 gracefully_kill_them_all" (master-start)...
+Thu May  4 01:33:08 2023 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 17)...
+Gracefully killing worker 2 (pid: 18)...
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:33:12 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:33:17 UTC)" skipped: maximum number of running instances reached (1)
+
+;uWSGI instance configuration
+[uwsgi]
+ini = /app/uwsgi.ini
+base = /app
+module = bgp
+callable = app
+socket = /app/uwsgi.sock
+chmod-socket = 666
+logto = /app/app.log
+enable-threads = true
+chdir = /app
+processes = 16
+cheaper = 2
+ini = /etc/uwsgi/uwsgi.ini
+socket = /tmp/uwsgi.sock
+chown-socket = nginx:nginx
+chmod-socket = 664
+hook-master-start = unix_signal:15 gracefully_kill_them_all
+need-app = true
+die-on-term = true
+show-config = true
+;end of configuration
+
+*** Starting uWSGI 2.0.21 (64bit) on [Thu May  4 01:34:12 2023] ***
+compiled with version: 10.2.1 20210110 on 24 April 2023 00:20:35
+os: Linux-6.1.27-orbstack-00157-ge13e9ffcc54a #1 SMP Mon May  1 23:01:36 UTC 2023
+nodename: a751160bb954
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 10
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+chdir() to /app
+your processes number limit is 31744
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+chmod(): Invalid argument [core/socket.c line 245]
+uwsgi socket 0 bound to UNIX address /app/uwsgi.sock fd 4
+uwsgi socket 1 bound to UNIX address /tmp/uwsgi.sock fd 5
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.10.11 (main, Apr 12 2023, 14:46:22) [GCC 10.2.1 20210110]
+Python main interpreter initialized at 0x5555556e2320
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 1239640 bytes (1210 KB) for 16 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5555556e2320 pid: 10 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10)
+spawned uWSGI worker 1 (pid: 17, cores: 1)
+spawned uWSGI worker 2 (pid: 18, cores: 1)
+running "unix_signal:15 gracefully_kill_them_all" (master-start)...
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:22 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:27 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:32 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:37 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:42 UTC)" skipped: maximum number of running instances reached (1)
+Exception in thread Thread-1 (update_stats):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/app/./Stats.py", line 149, in update_stats
+    self.ipv4_table_size = self.prefix_count(4)
+  File "/app/./Stats.py", line 52, in prefix_count
+    return self.db.bgp.count_documents({'ip_version': version, 'active': True})
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1842, in count_documents
+    return self._retryable_non_cursor_read(_cmd, session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1847, in _retryable_non_cursor_read
+    with client._tmp_session(session) as s:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1757, in _tmp_session
+    s = self._ensure_session(session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1740, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1685, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 538, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 554, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 238, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 64530b946730032bf71985bd, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -2] Name or service not known')>]>
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:47 UTC)" skipped: maximum number of running instances reached (1)
+Job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:52 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/app/./Stats.py", line 149, in update_stats
+    self.ipv4_table_size = self.prefix_count(4)
+  File "/app/./Stats.py", line 52, in prefix_count
+    return self.db.bgp.count_documents({'ip_version': version, 'active': True})
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1842, in count_documents
+    return self._retryable_non_cursor_read(_cmd, session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1847, in _retryable_non_cursor_read
+    with client._tmp_session(session) as s:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1757, in _tmp_session
+    s = self._ensure_session(session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1740, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1685, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 538, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 554, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 238, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 64530b946730032bf71985bd, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -2] Name or service not known')>]>
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:34:57 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:02 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:07 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:12 UTC)" skipped: maximum number of running instances reached (1)
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:17 UTC)" skipped: maximum number of running instances reached (1)
+Thu May  4 01:35:21 2023 - graceful shutdown triggered...
+Gracefully killing worker 1 (pid: 17)...
+Gracefully killing worker 2 (pid: 18)...
+Execution of job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:22 UTC)" skipped: maximum number of running instances reached (1)
+Job "Stats.update_stats (trigger: interval[0:00:05], next run at: 2023-05-04 01:35:27 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/app/./Stats.py", line 149, in update_stats
+    self.ipv4_table_size = self.prefix_count(4)
+  File "/app/./Stats.py", line 52, in prefix_count
+    return self.db.bgp.count_documents({'ip_version': version, 'active': True})
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1842, in count_documents
+    return self._retryable_non_cursor_read(_cmd, session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/collection.py", line 1847, in _retryable_non_cursor_read
+    with client._tmp_session(session) as s:
+  File "/usr/local/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1757, in _tmp_session
+    s = self._ensure_session(session)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1740, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.10/site-packages/pymongo/mongo_client.py", line 1685, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 538, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 554, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.10/site-packages/pymongo/topology.py", line 238, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno -2] Name or service not known, Timeout: 30s, Topology Description: <TopologyDescription id: 64530b946730032bf71985bd, topology_type: Unknown, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -2] Name or service not known')>]>

@@ -1,6 +1,0 @@
-pymongo
-dnspython
-requests
-ipaddress
-apscheduler
-pytz
