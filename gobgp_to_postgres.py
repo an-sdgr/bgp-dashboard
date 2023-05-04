@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+import os
 import sys
 import ipaddress
 import logging
@@ -8,9 +9,10 @@ import bgp_attributes as BGP
 from datetime import datetime
 import psycopg
 
-db_server = "postgres"
-db_name = "bgp_data"
-db_table = "prefix"
+db_server = os.getenv("POSTGRES_SERVER", "postgres")
+db_password = os.genenv("POSTGRES_PASSWORD")
+db_name = os.getenv("POSTGRES_DATABASE", "bgp_data")
+db_table = os.getenv("POSTGRES_TABLE", "prefix")
 
 def community_32bit_to_string(number):
     """Given a 32bit number, convert to standard bgp community format XXX:XX"""
@@ -240,9 +242,9 @@ def insert_into_sql(con, prefix_from_gobgp):
 def db_connect(host=db_server, db=None):
     """Return a connection to the Database."""
     if db != None:
-        connection_string = "host=" + host + " dbname=" + db
+        connection_string = "host=" + host + " dbname=" + db + " user=postgres" + " password=" + db_password
     else:
-        connection_string = "host=" + host
+        connection_string = "host=" + host + " user=postgres" + " password=" + db_password
 
     con = psycopg.connect(conninfo = connection_string, autocommit=True)
     return con

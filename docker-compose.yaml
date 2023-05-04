@@ -2,6 +2,8 @@ version: '2'
 services:
   gobgp:
     build: ./gobgp
+    env_file:
+      - "dev.env"
     ports:
       - 179:179
     volumes:
@@ -15,24 +17,26 @@ services:
   #   volumes:
   #     - ./db:/data/db
 
-  # flask:
-  #   build: ./flask
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./flask/app:/app
-  #     # - ./flask/app/log:/var/log/uwsgi/app
-
-  fastapi:
-    build: ./fastapi
+  flask:
+    build: ./flask
     ports:
       - 80:80
     volumes:
-      - ./fastapi:/code
+      - ./flask/app:/app
       # - ./flask/app/log:/var/log/uwsgi/app
+
+  #fastapi:
+  #  build: ./fastapi
+  #  ports:
+  #    - 80:80
+  #  volumes:
+  #    - ./fastapi:/code
+  #    # - ./flask/app/log:/var/log/uwsgi/app
 
   postgres:
     image: postgres:14.4
+    env_file:
+     - "dev.env"
     expose:
       - 5432
     volumes:
