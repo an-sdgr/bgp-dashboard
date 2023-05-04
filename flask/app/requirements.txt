@@ -1,0 +1,7 @@
+pymongo
+dnspython
+requests
+ipaddress
+apscheduler
+pytz
+psycopg[binary,pool]

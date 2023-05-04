@@ -1,3 +1,4 @@
 pymongo
 dnspython
 ipaddress
+psycopg[binary,pool]
