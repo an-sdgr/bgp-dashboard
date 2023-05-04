@@ -10,7 +10,7 @@ from datetime import datetime
 import psycopg
 
 db_server = os.getenv("POSTGRES_SERVER", "postgres")
-db_password = os.genenv("POSTGRES_PASSWORD")
+db_password = os.getenv("POSTGRES_PASSWORD")
 db_name = os.getenv("POSTGRES_DATABASE", "bgp_data")
 db_table = os.getenv("POSTGRES_TABLE", "prefix")
 
