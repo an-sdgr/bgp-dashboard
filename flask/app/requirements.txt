@@ -1,7 +1,9 @@
 pymongo
 dnspython
 requests
+flask
 ipaddress
 apscheduler
+uwsgi
 pytz
 psycopg[binary,pool]
