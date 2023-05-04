@@ -25,4 +25,4 @@ RUN pip3 install -r /tmp/requirements.txt
 RUN chown -R www-data:www-data /var/www/app
 RUN chown -R www-data:www-data /var/log
 
-# CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord"]
