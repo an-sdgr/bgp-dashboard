@@ -5,6 +5,7 @@
 **/.ropeproject
 /db
 !.gitkeep
+flask/app/app.log
 **/venv
 *.vscode
 *.idea
